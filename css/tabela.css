@@ -1,0 +1,37 @@
+#senhas {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+  
+#senhas table {
+    width: 500px;
+    border-collapse: collapse;
+}
+
+@media only screen and (max-device-width: 520px) {
+    #senhas table {
+        width: 200px;
+        border-collapse: collapse;
+    }
+}
+
+#senhas thead {
+    background-color: rgb(67, 67, 98);
+    color: white;
+}
+
+#senhas tbody tr:nth-child(odd) {
+    background-color: transparent;
+}
+
+#senhas tbody tr:nth-child(even) {
+    background-color: transparent;
+}
+
+#senhas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}

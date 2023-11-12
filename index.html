@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css">
+    <title>Senhas</title>
 </head>
 <body>
     <Section>
-        <div>
+        <div id="formilarioGerarSenha">
             <h1>Gerador de Senhas</h1>
             <form>
-                <label for="nome">nome</label><br>
-                <input type="text" name="nome" id="nome"><br>
-                <label for="tamanho">tamanho da senha</label><br>
-                <input type="number" name="tamanho" id="tamanho" min="8" max="30"><br>
-                <br>
+                <label for="nome">nome</label>
+                <input type="text" name="nome" id="nome" placeholder="ex.: Twitter"><br>
+                <label for="tamanho">tamanho da senha</label>
+                <input type="number" name="tamanho" id="tamanho" min="8" max="30" placeholder="8">
+                
                 <button type="button" onclick="gerarSenha()">Gerar Senha</button>
             </form>
             <br>
@@ -23,7 +24,9 @@
             <h3></h3>
         </div>
         <div id="senhas">
+            <br>
             <h2>Senhas</h2>
+            <br>
             <table>
                 <thead>
                     <tr>
@@ -38,8 +41,10 @@
 
                 </tbody>
             </table>
+            <br>
+            <br>
         </div>
     </Section>
-    <script src="index.js" defer></script>
+    <script src="js/index.js" defer></script>
 </body>
 </html>

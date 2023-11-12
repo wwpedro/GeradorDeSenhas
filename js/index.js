@@ -11,13 +11,19 @@ function gerarSenha() {
     let nome = document.getElementById("nome").value;
     let tamanho=document.getElementById("tamanho").value;
     let senha="";
+    if (tamanho >= 8 && tamanho <= 30) {
+        for (let i = 0; i < tamanho; i++) {
+            senha += lista[parseInt(Math.random()*lista.length)];
+        }
     
-    for (let i = 0; i < tamanho; i++) {
-        senha += lista[parseInt(Math.random()*lista.length)];
+        Senhas.push([nome,senha]);
+        atualizarTabela();
+        return;
+    }else{
+        
+        alert("O tamanho da senha deve ser entre 8 e 30 caracteres.");
     }
-
-    Senhas.push([nome,senha]);
-    atualizarTabela();
+    
 }
 
 function atualizarTabela() {
@@ -37,12 +43,15 @@ function atualizarTabela() {
 const btngerar = document.querySelector("#gerarpdf");
 
 btngerar.addEventListener("click", ()=>{
-    const content = document.querySelector("#senhas")
+    const senhaDiv = document.querySelector("#senhas")
 
     const opitions = {
-        margin: [10,10,10,10],
-        filename: "Mercado_lista.pdf"
+        filename: "Mercado_lista.pdf",
+        margin: 15,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     }
 
-    html2pdf().set(opitions).from(content).save();
+    html2pdf().set(opitions).from(senhaDiv).save();
 })
