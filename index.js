@@ -32,3 +32,17 @@ function atualizarTabela() {
         celula2.innerHTML = Senhas[i][1];
     }
 }
+
+
+const btngerar = document.querySelector("#gerarpdf");
+
+btngerar.addEventListener("click", ()=>{
+    const content = document.querySelector("#senhas")
+
+    const opitions = {
+        margin: [10,10,10,10],
+        filename: "Mercado_lista.pdf"
+    }
+
+    html2pdf().set(opitions).from(content).save();
+})
