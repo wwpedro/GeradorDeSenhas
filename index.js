@@ -1,21 +1,34 @@
+let Senhas = [];
+
 function gerarSenha() {
     
-    let maiusculas ="ABCDEFGHIJKLMNOPQRSTUVWXYZÇ";
-    let minusculas ="abcdefghijklmnopqrstuvwxyzç";
+    let maiusculas ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let minusculas ="abcdefghijklmnopqrstuvwxyz";
     let numeros="0123456789";
     let caracteres="!@#$%&:.,;*()|^{}[]?";
     let lista = [maiusculas,minusculas,numeros,caracteres].join('').split('');
     
-    //let nome = document.getElementById("nome");
-    //let tamanho=document.getElementById("tamanho");
+    let nome = document.getElementById("nome").value;
+    let tamanho=document.getElementById("tamanho").value;
     let senha="";
-
-    for (let i = 0; i < 12; i++) {
+    
+    for (let i = 0; i < tamanho; i++) {
         senha += lista[parseInt(Math.random()*lista.length)];
     }
 
-    return senha;
-    
+    Senhas.push([nome,senha]);
+    atualizarTabela();
 }
 
-document.querySelector("h3").innerHTML = gerarSenha();
+function atualizarTabela() {
+    let tbody = document.getElementById("tabelaSenhas");
+    tbody.innerHTML = "";
+
+    for (let i = 0; i < Senhas.length; i++) {
+        let linha = tbody.insertRow();
+        let celula1 = linha.insertCell(0);
+        let celula2 = linha.insertCell(1);
+        celula1.innerHTML = Senhas[i][0];
+        celula2.innerHTML = Senhas[i][1];
+    }
+}

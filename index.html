@@ -9,31 +9,32 @@
     <Section>
         <div>
             <h1>Gerador de Senhas</h1>
-                <!--<label>nome</label><br>
+            <form>
+                <label for="nome">nome</label><br>
                 <input type="text" name="nome" id="nome"><br>
-                <label>tamanho da senha</label><br>
+                <label for="tamanho">tamanho da senha</label><br>
                 <input type="number" name="tamanho" id="tamanho"><br>
-                <label>senha</label><br>
-                <br>!-->
-                <h3></h3>
                 <br>
-                <button onclick="gerarSenha()">Gerar Senha</button>
+                <button type="button" onclick="gerarSenha()">Gerar Senha</button>
+            </form>
+            <br>
+            <h3></h3>
         </div>
-        <div>
+        <div id="senhas">
             <h2>Senhas</h2>
             <table>
-                <tr>
-                    <td>nome</td>
-                    <td>senha</td>
-                </tr>
-                <tr>
-                    <td>insta</td>
-                    <td>asdhjuwqu2367@</td>
-                </tr>
-                <tr>
-                    <td>face</td>
-                    <td>asdhjuwqu2367@</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td>nome</td>
+                        <td>senha</td>
+                    </tr>
+                </thead>
+                <tbody id="tabelaSenhas">
+
+                </tbody>
+                <tbody>
+
+                </tbody>
             </table>
         </div>
     </Section>
