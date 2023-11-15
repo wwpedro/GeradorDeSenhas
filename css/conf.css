@@ -1,6 +1,6 @@
 body {
-    font-family:  sans-serif;
-    background-color: rgba(32, 38, 121, 0.514);
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(249, 249, 249);
 }
 
 section {
@@ -8,10 +8,13 @@ section {
     justify-content: center;
     align-items: center;
     margin: 0;
-    font-family: Arial, sans-serif;
     flex-direction: column;
 }
 
 h2 h1 {
     color: rgb(35, 35, 75);
+}
+
+img{
+    width: 60px;
 }
